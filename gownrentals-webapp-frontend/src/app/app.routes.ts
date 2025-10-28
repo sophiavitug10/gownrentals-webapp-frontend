@@ -9,6 +9,7 @@ export const routes: Routes = [
     path: 'footer',
     loadComponent: () => import('./footer/footer.component').then(m => m.FooterComponent),
   }
+
 ];
 
 
