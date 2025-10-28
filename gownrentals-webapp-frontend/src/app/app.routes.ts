@@ -14,7 +14,7 @@ import { RentalorderComponent } from './rentalorder/rentalorder.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'login', component: LoginpageComponent },
   { path: 'signup', component: SignuppageComponent },

@@ -1,52 +1,65 @@
 <div class="home-container">
 
-  <!-- Hero Carousel -->
+  <!-- 🌷 Hero Carousel -->
   <div class="hero-section">
     <div class="carousel">
-      <div class="slides">
-        <img *ngFor="let item of carouselItems; let i = index"
-             [src]="item.src"
-             [alt]="item.name"
-             [class.active]="i === currentSlide">
+
+      <div
+        class="slides"
+        [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+      >
+        @for (item of carouselItems; track $index) {
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+            [class.active]="$index === currentSlide"
+          />
+        }
       </div>
 
-      <!-- Overlay -->
+      <!-- Overlay text -->
       <div class="overlay">
-        <h1>Welcome to <span class="highlight">Aurielle Gown Rentals</span></h1>
+        <h1>
+          Welcome to <span class="highlight">Aurielle Gown Rentals</span>
+        </h1>
         <p>Elegance. Style. Confidence — Rent your dream gown today.</p>
+
         <div class="button-group">
-          <a routerLink="/gown-catalog" class="btn">View Gowns</a>
+          <a routerLink="/gown-catalog" class="btn primary">View Gowns</a>
           <a routerLink="/booking" class="btn secondary">Book Now</a>
         </div>
       </div>
 
-      <!-- Navigation -->
-      <button class="nav-btn prev" (click)="prevSlide()">&#10094;</button>
-      <button class="nav-btn next" (click)="nextSlide()">&#10095;</button>
+      <!-- Navigation buttons -->
+      <button
+        class="nav-btn prev"
+        (click)="prevSlide()"
+        aria-label="Previous slide"
+      >
+        &#10094;
+      </button>
+      <button
+        class="nav-btn next"
+        (click)="nextSlide()"
+        aria-label="Next slide"
+      >
+        &#10095;
+      </button>
     </div>
   </div>
 
-  <!-- Summary Section -->
+  <!-- 🌸 Summary Section -->
   <section class="summary-section">
     <h2>Why Choose Us?</h2>
+
     <div class="summary-cards">
-      <div class="card">
-        <img src="assets/images/quality.jpg" alt="Premium Quality">
-        <h3>Premium Quality</h3>
-        <p>Each gown is crafted with exquisite fabrics and flawless tailoring for a luxurious fit and feel.</p>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/service.jpg" alt="Exceptional Service">
-        <h3>Exceptional Service</h3>
-        <p>Our team ensures every client feels confident and stunning — from fitting to final walk.</p>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/style.jpg" alt="Timeless Style">
-        <h3>Timeless Style</h3>
-        <p>Choose from our wide collection — from elegant classics to modern statement gowns.</p>
-      </div>
+      @for (card of summaryCards; track card.title) {
+        <div class="card">
+          <img [src]="card.image" [alt]="card.title" />
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.text }}</p>
+        </div>
+      }
     </div>
   </section>
 </div>

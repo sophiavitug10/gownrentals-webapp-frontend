@@ -1,96 +1,118 @@
+:root {
+  --pink-primary: #e27bb1;
+  --pink-light: #f6e4f9;
+  --purple-soft: #dac1f4;
+  --rose-dark: #bb437e;
+  --text-dark: #3d091a;
+}
+
+/* Header Container */
 .header {
-    width: 100%;
-    height: 80px;
-    background-image: url("../../assets/header.png");
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 0 20px;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(90deg, var(--rose-dark), var(--pink-primary), var(--purple-soft));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
+/* Header Content Layout */
 .header-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 1600px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  flex-wrap: wrap;
 }
 
-/* Logo as text */
+/* Logo (Aurielle) */
 .logo-text {
-    font-family: 'Great Vibes', cursive; /* elegant script font */
-    font-size: 4rem;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 24px rgba(255,182,193,0.4);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo-text:hover {
-    color: #ffccff;
-    transform: scale(1.1);
+  transform: scale(1.05);
+  text-shadow: 0 0 18px rgba(255,255,255,0.9), 0 0 28px rgba(255,182,193,0.6);
 }
 
+/* Phrase / Tagline */
 .phrase {
-    flex: 1;
-    margin-left: 30px;
-    font-size: 1.4rem;
-    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
-    color: #ffffff; /* make the base text white */
-    font-weight: 600;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* soft white glow */
-    line-height: 1.3;
+  flex: 1;
+  margin-left: 30px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
 }
 
 .phrase .highlight {
-    color: #ffffff; /* also white */
-    font-weight: bold;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9); /* stronger glow for emphasis */
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
+  background: linear-gradient(90deg, var(--pink-light), #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
-
+/* Menu Buttons */
 .menu-buttons {
-    display: flex;
+  display: flex;
+  gap: 12px;
+}
+
+.menu-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.menu-btn:hover {
+  background: rgba(255,255,255,0.4);
+  color: var(--text-dark);
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 10px;
-}
+  }
 
-.button1 {
-    padding: 10px 20px;
-    background-image: url("../../assets/btn1.png");
-    color: rgb(61, 9, 26);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
+  .logo-text {
+    font-size: 2.8rem;
+  }
 
-.button1:hover {
-    transform: scale(1.05);
-}
+  .phrase {
+    margin: 0;
+    font-size: 1.1rem;
+  }
 
-/* Optional: responsive tweaks */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .phrase {
-        margin-left: 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    .menu-buttons {
-        justify-content: center;
-        width: 100%;
-    }
+  .menu-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

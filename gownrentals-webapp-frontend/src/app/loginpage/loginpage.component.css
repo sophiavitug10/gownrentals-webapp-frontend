@@ -1,0 +1,135 @@
+:root {
+  --primary: #ff66b2;
+  --secondary: #ff99cc;
+  --accent: #ffe600;
+  --background-dark: #3d091a;
+  --text-light: #ffffff;
+  --text-muted: #f7f7f7;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Verdana', sans-serif;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(61, 9, 26, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 20px var(--shadow);
+  padding: 40px 30px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  color: var(--background-dark);
+  transition: box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+/* Button */
+.login-btn {
+  background: var(--primary);
+  border: none;
+  color: var(--text-light);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: var(--accent);
+  color: var(--background-dark);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 230, 0, 0.6);
+}
+
+/* Links */
+.forgot-password {
+  margin-top: 15px;
+}
+
+.forgot-password a {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: var(--text-light);
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  color: var(--text-light);
+}
