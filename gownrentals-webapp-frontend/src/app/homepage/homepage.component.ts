@@ -1,52 +1,31 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  selector: 'app-main-body',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css'],
+  standalone: false
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  currentIndex = 0;
-  carouselItems = [
-    { src: 'assets/images/gown1.jpg', name: 'Elegant Blue Gown' },
-    { src: 'assets/images/gown4.jpg', name: 'Classic Pink Gown' },
-    { src: 'assets/images/gown5.jpg', name: 'Royal Pink Gown' }
+export class HomepageComponent implements OnInit {
+
+  public currentSlide = 0;
+
+  public carouselItems = [
+    { src: 'assets/images/gown5.jpg', name: 'Gown 1' },
+    { src: 'assets/images/gown4.jpg', name: 'Gown 2' },
+    { src: 'assets/images/gown3.jpg', name: 'Gown 3' }
   ];
-  private slideInterval: any;
 
-  get totalSlides() {
-    return this.carouselItems.length;
+  ngOnInit(): void {
+    // Auto-slide every 5 seconds
+    setInterval(() => this.nextSlide(), 5000);
   }
 
-  ngOnInit() {
-    this.startAutoSlide();
+  prevSlide(): void {
+    this.currentSlide = (this.currentSlide - 1 + this.carouselItems.length) % this.carouselItems.length;
   }
 
-  ngOnDestroy() {
-    clearInterval(this.slideInterval);
-  }
-
-  nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-    this.resetAutoSlide();
-  }
-
-  prevSlide() {
-    this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
-    this.resetAutoSlide();
-  }
-
-  startAutoSlide() {
-    this.slideInterval = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-    }, 4000);
-  }
-
-  resetAutoSlide() {
-    clearInterval(this.slideInterval);
-    this.startAutoSlide();
+  nextSlide(): void {
+    this.currentSlide = (this.currentSlide + 1) % this.carouselItems.length;
   }
 }

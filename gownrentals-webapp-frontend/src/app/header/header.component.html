@@ -1,1 +1,21 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header-content">
+    <!-- Logo as text -->
+    <a routerLink="/" class="logo-text">Aurielle</a>
+
+    <!-- Phrase -->
+    <div class="phrase">
+      <span class="highlight">Where you enjoy</span> the most <span class="highlight">shopping experience</span>
+    </div>
+
+    <!-- Menu buttons -->
+    <div class="menu-buttons">
+      <button 
+        *ngFor="let menu of menus"
+        class="button1"
+        routerLink="/{{menu.routerPath}}">
+        {{menu.name}}
+      </button>
+    </div>
+  </div>
+</div>

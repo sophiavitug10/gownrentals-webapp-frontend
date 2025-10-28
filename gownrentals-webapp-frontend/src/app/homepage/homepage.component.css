@@ -38,6 +38,7 @@
   font-size: 3rem;
   margin-bottom: 15px;
 }
+
 .overlay .highlight {
   color: #ffffff; /* white text */
   text-shadow: 0 0 10px rgba(255, 105, 180, 0.9),   /* hot pink inner glow */
@@ -63,7 +64,7 @@
   font-weight: bold;
   background-color: #BC13C2;
   color: #fff;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .button-group .btn:hover {
