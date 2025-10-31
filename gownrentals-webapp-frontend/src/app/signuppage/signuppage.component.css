@@ -1,92 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500&display=swap');
+
 :root {
-  --primary: #ff66b2;
-  --secondary: #ff99cc;
-  --accent: #ffe600;
-  --background-dark: #3d091a;
-  --text-light: #ffffff;
-  --text-muted: #f7f7f7;
-  --shadow: rgba(0, 0, 0, 0.25);
+  --royal-purple: #3C0055D9;
+  --pink-primary: #e27bb1;
+  --lavender-soft: #eec4dc;
+  --rose-dark: #bb437e;
+  --gold-accent: #ffe68f;
+  --white-pure: #ffffff;
+  --shadow-deep: rgba(60, 0, 85, 0.4);
 }
 
+/* 🌸 Body Background */
 body {
   margin: 0;
-  font-family: 'Poppins', 'Verdana', sans-serif;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--royal-purple), var(--rose-dark), var(--pink-primary));
+  background-attachment: fixed;
+  color: var(--white-pure);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
+/* 🌷 Container */
 .signup-container {
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   padding: 20px;
 }
 
+/* 💎 Card Styling */
 .signup-card {
-  background: rgba(61, 9, 26, 0.8);
-  border-radius: 20px;
-  box-shadow: 0 0 20px var(--shadow);
-  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px var(--shadow-deep);
+  padding: 50px 35px;
   text-align: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Logo */
+ /* 🌸 Logo */
 .logo {
   font-family: 'Great Vibes', cursive;
   font-size: 3.5rem;
-  color: var(--accent);
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  color: var(--gold-accent);
+  text-shadow: 0 0 15px rgba(255,255,255,0.7), 0 0 35px rgba(255,200,255,0.5);
   margin-bottom: 10px;
 }
 
-/* Subtitle */
+/* 💐 Subtitle */
 .subtitle {
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 25px;
+  color: var(--white-pure);
+  opacity: 0.9;
+  margin-bottom: 30px;
 }
 
-/* Role Toggle Buttons */
+/* 👑 Role Toggle Buttons */
 .role-toggle {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 35px;
 }
 
 .role-btn {
   flex: 1;
-  background: var(--secondary);
+  background: linear-gradient(90deg, var(--pink-primary), var(--lavender-soft));
   border: none;
   border-radius: 12px;
   padding: 12px 0;
-  color: var(--background-dark);
+  color: var(--royal-purple);
   font-weight: 600;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
 }
 
 .role-btn.active {
-  background: var(--accent);
-  color: var(--background-dark);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 230, 0, 0.5);
+  background: var(--gold-accent);
+  color: var(--royal-purple);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 230, 143, 0.6);
 }
 
 .role-btn:hover {
-  opacity: 0.9;
+  opacity: 0.95;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
-/* Form */
+/* ✨ Form Inputs */
 .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .form-group {
@@ -95,61 +106,65 @@ body {
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
-  color: var(--text-light);
+  margin-bottom: 6px;
   font-weight: 500;
+  color: var(--white-pure);
+  font-family: 'Playfair Display', serif;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
   border: none;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   font-size: 0.95rem;
-  color: #3d091a;
+  color: var(--royal-purple);
   transition: box-shadow 0.3s ease;
 }
 
 .form-group input:focus {
   outline: none;
-  box-shadow: 0 0 10px var(--primary);
+  box-shadow: 0 0 12px var(--pink-primary);
 }
 
-/* Submit Button */
+/* 🌟 Submit Button */
 .submit-btn {
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--pink-primary), var(--rose-dark));
   border: none;
-  color: var(--text-light);
-  padding: 12px;
+  color: var(--white-pure);
+  padding: 14px;
   border-radius: 10px;
   font-size: 1rem;
-  font-weight: bold;
-  margin-top: 15px;
+  font-weight: 600;
+  margin-top: 20px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-  background: var(--accent);
-  color: var(--background-dark);
+  background: var(--gold-accent);
+  color: var(--royal-purple);
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 230, 0, 0.6);
+  box-shadow: 0 0 18px rgba(255,230,143,0.6);
 }
 
-/* Login Link */
+/* 🌷 Login Link */
 .login-link {
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 0.9rem;
+  color: var(--white-pure);
 }
 
 .login-link a {
-  color: var(--accent);
+  color: var(--gold-accent);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .login-link a:hover {
-  color: var(--text-light);
+  color: var(--pink-primary);
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
 }

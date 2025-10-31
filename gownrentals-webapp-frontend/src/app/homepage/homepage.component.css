@@ -1,21 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500&display=swap');
+
 /* 🎀 Global Palette */
 :root {
-  --pink-primary: #e27bb1;
-  --pink-light: #f6e4f9;
-  --purple-soft: #dac1f4;
+  --royal-purple: #3C0055D9;
+  --pink-primary: #ff66b2;
+  --pink-light: #ff99cc;
+  --lavender-soft: #e8c9ff;
   --rose-dark: #bb437e;
-  --lavender: #eec4dc;
+  --gold-accent: #ffe600;
+  --white-pure: #ffffff;
   --text-dark: #3d091a;
+  --shadow-soft: rgba(0, 0, 0, 0.2);
 }
 
 /* 🌸 Hero Section */
 .hero-section {
   position: relative;
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 60px auto;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(60, 0, 85, 0.3);
+  background: linear-gradient(145deg, var(--royal-purple), var(--pink-primary), var(--lavender-soft));
 }
 
 .slides {
@@ -25,161 +31,174 @@
 
 .slides img {
   width: 100%;
-  height: 520px;
+  height: 540px;
   object-fit: cover;
-  opacity: 0.6;
-  transition: opacity 0.5s, transform 0.5s;
-  border-radius: 16px;
+  opacity: 0.65;
+  border-radius: 20px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .slides img.active {
   opacity: 1;
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-/* ✨ Overlay text */
+/* ✨ Overlay Text */
 .overlay {
   position: absolute;
   top: 25%;
   left: 10%;
-  color: white;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-  max-width: 480px;
+  color: var(--white-pure);
+  max-width: 520px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7),
+               0 0 18px rgba(255,204,255,0.5);
 }
 
 .overlay h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .overlay .highlight {
-  background: linear-gradient(90deg, var(--pink-primary), var(--purple-soft));
+  background: linear-gradient(90deg, var(--pink-primary), var(--lavender-soft));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .overlay p {
   font-size: 1.25rem;
-  margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 30px;
 }
 
-/* Buttons */
+/* 🌷 Buttons */
 .button-group .btn {
-  padding: 12px 28px;
+  display: inline-block;
+  padding: 12px 30px;
   margin-right: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .btn.primary {
-  background: linear-gradient(90deg, var(--pink-primary), var(--rose-dark));
-  color: #fff;
+  background: linear-gradient(90deg, var(--pink-primary), var(--royal-purple));
+  color: var(--white-pure);
 }
 
 .btn.primary:hover {
   transform: scale(1.05);
-  background: linear-gradient(90deg, var(--rose-dark), var(--pink-primary));
+  background: linear-gradient(90deg, var(--royal-purple), var(--pink-primary));
+  box-shadow: 0 0 20px rgba(255, 182, 245, 0.6);
 }
 
 .btn.secondary {
-  background: #fff;
-  color: var(--pink-primary);
-  border: 2px solid var(--pink-primary);
+  background: var(--white-pure);
+  color: var(--royal-purple);
+  border: 2px solid var(--royal-purple);
 }
 
 .btn.secondary:hover {
-  background: var(--lavender);
-  color: #3d091a;
+  background: var(--lavender-soft);
+  color: var(--rose-dark);
 }
 
-/* Carousel navigation */
+/* 🌹 Carousel Navigation */
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
-  background: rgba(255,255,255,0.8);
+  font-size: 2.2rem;
+  background: rgba(255,255,255,0.85);
   border: none;
-  padding: 8px 14px;
+  color: var(--royal-purple);
+  padding: 8px 16px;
   cursor: pointer;
   border-radius: 50%;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .nav-btn:hover {
-  background: var(--lavender);
+  background: var(--pink-light);
+  color: var(--white-pure);
+  box-shadow: 0 0 12px rgba(255,182,245,0.7);
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+.prev { left: 20px; }
+.next { right: 20px; }
 
-/* 🌷 Summary Section */
+/* 💎 Summary Section */
 .summary-section {
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 120px auto;
   text-align: center;
   color: var(--text-dark);
 }
+
 .summary-section h2 {
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-  background: linear-gradient(90deg, var(--rose-dark), var(--pink-primary));
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(90deg, var(--royal-purple), var(--pink-primary), var(--lavender-soft));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Playfair Display', serif;
 }
 
-
+/* Cards */
 .summary-cards {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 35px;
   flex-wrap: wrap;
 }
 
 .card {
   flex: 1 1 30%;
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: linear-gradient(180deg, #fff, #fff0fa);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(60, 0, 85, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 28px rgba(60, 0, 85, 0.25);
 }
 
 .card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  border-radius: 12px;
+  margin-bottom: 18px;
 }
 
 .card h3 {
-  margin-bottom: 8px;
-  color: var(--rose-dark);
+  color: var(--royal-purple);
   font-weight: 700;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
 }
 
 .card p {
   font-size: 1rem;
-  color: #555;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
   .overlay h1 { font-size: 2rem; }
-  .slides img { height: 400px; }
+  .slides img { height: 420px; }
   .summary-cards { flex-direction: column; gap: 30px; }
 }

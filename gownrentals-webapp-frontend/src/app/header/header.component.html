@@ -1,24 +1,19 @@
 <div class="header">
   <div class="header-content">
-    
+
     <!-- Logo -->
     <a routerLink="/" class="logo-text">Aurielle</a>
 
-    <!-- Tagline -->
-    <div class="phrase">
-      <span class="highlight">Where you enjoy</span> the most 
-      <span class="highlight">shopping experience</span>
-    </div>
-
-    <!-- Navigation Buttons -->
-    <div class="menu-buttons">
-      <button
-        *ngFor="let menu of menus"
-        class="menu-btn"
-        [routerLink]="menu.routerPath">
+    <!-- Navigation -->
+    <nav class="nav-menu">
+      <a *ngFor="let menu of menus"
+         class="nav-link"
+         [routerLink]="menu.routerPath"
+         routerLinkActive="active">
         {{ menu.name }}
-      </button>
-    </div>
+      </a>
+    </nav>
 
   </div>
 </div>
+

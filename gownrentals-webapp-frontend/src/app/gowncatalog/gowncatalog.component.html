@@ -1,1 +1,31 @@
-<p>gowncatalog works!</p>
+<div class="catalog-container">
+
+  <!-- 🌸 Page Header -->
+  <div class="catalog-header">
+    <h1>Browse Our Gowns</h1>
+    <p>Find the perfect gown for your special occasion ✨</p>
+  </div>
+
+  <!-- 💐 Filter/Search Bar -->
+  <div class="catalog-filters">
+    <label for="categorySelect" class="sr-only">Filter by category</label>
+    <input type="text" placeholder="Search gowns..." [(ngModel)]="searchTerm" />
+    <select id="categorySelect" [(ngModel)]="selectedCategory" aria-label="Filter by category" title="Filter by category">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- 👑 Gown Grid -->
+  <div class="gown-grid">
+    <div *ngFor="let gown of filteredGowns()" class="gown-card" (click)="viewDetails(gown)">
+      <img [src]="gown.image" [alt]="gown.name" />
+      <div class="gown-info">
+        <h3>{{ gown.name }}</h3>
+        <p>{{ gown.category }}</p>
+        <span class="price">₱{{ gown.price }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+

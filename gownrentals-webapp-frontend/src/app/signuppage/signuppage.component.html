@@ -1,16 +1,20 @@
-<div class="signup-container">
+<div class="signup-container"> 
   <div class="signup-card">
 
-    <!-- 🌷 Header -->
+    <!-- 🌷 Brand Header -->
     <h1 class="logo">Aurielle</h1>
     <p class="subtitle">Join our royal circle — choose your role below</p>
 
-    <!-- 💎 Toggle Buttons -->
+    <!-- 💎 Role Toggle -->
     <div class="role-toggle">
-      <button class="role-btn" [class.active]="selectedRole === 'customer'" (click)="selectedRole = 'customer'">
+      <button class="role-btn" 
+              [class.active]="selectedRole === 'customer'" 
+              (click)="selectedRole = 'customer'">
         👑 Customer
       </button>
-      <button class="role-btn" [class.active]="selectedRole === 'vendor'" (click)="selectedRole = 'vendor'">
+      <button class="role-btn" 
+              [class.active]="selectedRole === 'vendor'" 
+              (click)="selectedRole = 'vendor'">
         💐 Vendor
       </button>
     </div>
@@ -47,3 +51,4 @@
     </p>
   </div>
 </div>
+
